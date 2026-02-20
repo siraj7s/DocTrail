@@ -1,4 +1,4 @@
-### Document Management System built using frappe framework
+### Document Management System - DocTrail
 
  Document Management System built using frappe framework
 
