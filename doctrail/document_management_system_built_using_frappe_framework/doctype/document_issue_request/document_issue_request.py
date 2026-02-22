@@ -51,13 +51,13 @@ class DocumentIssueRequest(Document):
 				if recipients:
 					frappe.sendmail(
 						recipients=recipients,
-						subject="New Document Request Submitted",
+						subject="New Document Issue Request Raised",
 						message=f"""
 							Hello,<br><br>
-							A new document request has been submitted.<br><br>
+							A new document issue request has been raised.<br><br>
 							<b>Request ID:</b> {self.name}<br>
 							<b>Document:</b> {self.document}<br>
-							<b>Requested By:</b> {self.owner}<br><br>
+							<b>Requested By:</b> {self.employee_name}<br><br>
 							Please review the request.<br><br>
 							Regards,<br>
 							Archive System
@@ -67,6 +67,7 @@ class DocumentIssueRequest(Document):
 				frappe.db.set_value(self.doctype, self.name, "under_review_time", current_time)
 
 			elif self.workflow_state == "Approved":
+				self.send_document_email()
 				frappe.db.set_value(self.doctype, self.name, "approved_time", current_time)
 				# Get users by role
 				requester_users = frappe.get_all(
@@ -151,3 +152,44 @@ class DocumentIssueRequest(Document):
 					"custodian",
 					new_doc.received_by
 				)
+
+	def send_document_email(self):
+
+		# Get document registration record
+		doc_reg = frappe.get_doc("Document Registration", self.document)
+
+		# Check confidential
+		if doc_reg.is_confidential:
+			frappe.throw("Confidential document cannot be shared via email")
+
+		# Check digital file exists
+		if not doc_reg.digital_file:
+			frappe.throw("No digital file attached to this document")
+
+		# Get requester email
+		user_id = frappe.db.get_value("Employee", self.employee_id, "user_id")
+		if not user_id:
+			frappe.throw("No User linked to this Employee")
+
+		requester_email = frappe.db.get_value("User", user_id, "email")
+		if not requester_email:
+			frappe.throw("Requester email not found")
+
+		# Get file doc
+		file_doc = frappe.get_doc("File", {"file_url": doc_reg.digital_file})
+
+		frappe.sendmail(
+			recipients=[requester_email],
+			subject=f"Document Approved - {self.document}",
+			message=f"""
+				Dear {self.employee_name},<br><br>
+				Your document request has been approved.<br><br>
+				Please find the document attached.<br><br>
+				Regards,<br>
+				Document Management System
+			""",
+			attachments=[{
+        "fname": file_doc.file_name,
+        "fcontent": file_doc.get_content()
+    }]
+		)
