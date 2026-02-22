@@ -1,0 +1,41 @@
+{
+ "based_on": "registration_date",
+ "chart_name": "Document Regitration",
+ "chart_type": "Count",
+ "creation": "2026-02-22 00:17:56.043138",
+ "currency": "",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "Document Registration",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Document Registration\",\"status\",\"=\",\"Available\",false],[\"Document Registration\",\"status\",\"=\",\"Issued\",false]]",
+ "group_by_type": "Count",
+ "idx": 1,
+ "is_public": 1,
+ "is_standard": 1,
+ "last_synced_on": "2026-02-22 08:25:57.744976",
+ "modified": "2026-02-22 08:26:42.487707",
+ "modified_by": "Administrator",
+ "module": "document_management_system_built_using_frappe_framework",
+ "name": "Document Regitration",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "roles": [
+  {
+   "role": "Archive Librarian"
+  },
+  {
+   "role": "Archive Approver"
+  }
+ ],
+ "show_values_over_chart": 0,
+ "source": "",
+ "time_interval": "Weekly",
+ "timeseries": 1,
+ "timespan": "Last Month",
+ "type": "Pie",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "y_axis": []
+}

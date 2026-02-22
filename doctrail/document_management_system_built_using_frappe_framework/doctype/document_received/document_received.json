@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DR-.YYYY.-.####",
+ "creation": "2026-02-21 08:53:43.046348",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "issue_id",
+  "date_of_return",
+  "employee_id",
+  "returned_by",
+  "received_by",
+  "condition_at_return",
+  "column_break_xpea",
+  "location_changed",
+  "shelf",
+  "rack",
+  "amended_from",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "issue_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Issue ID",
+   "options": "Document Issue Request",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_return",
+   "fieldtype": "Date",
+   "label": "Date of Return"
+  },
+  {
+   "fetch_from": "issue_id.employee_id",
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_id.employee",
+   "fieldname": "returned_by",
+   "fieldtype": "Link",
+   "label": "Returned By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "label": "Received By ",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "condition_at_return",
+   "fieldtype": "Select",
+   "label": "Condition at Return",
+   "options": "\nGood\nSlight Damage\nMajor Damage\nMissing Pages"
+  },
+  {
+   "fieldname": "column_break_xpea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "location_changed",
+   "fieldtype": "Check",
+   "label": "Location Changed?"
+  },
+  {
+   "depends_on": "eval:doc.location_changed == 1",
+   "fieldname": "shelf",
+   "fieldtype": "Link",
+   "label": "Shelf",
+   "mandatory_depends_on": "eval:doc.location_changed == 1",
+   "options": "Shelf Number"
+  },
+  {
+   "depends_on": "eval:doc.location_changed == 1",
+   "fieldname": "rack",
+   "fieldtype": "Link",
+   "label": "Rack",
+   "options": "Rack Number"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Received",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-21 08:53:43.046348",
+ "modified_by": "Administrator",
+ "module": "document_management_system_built_using_frappe_framework",
+ "name": "Document Received",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Librarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Requester",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Approver",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

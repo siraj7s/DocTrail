@@ -1,0 +1,209 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DIR-.YYYY.-.####",
+ "creation": "2026-02-21 08:53:24.896873",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_id",
+  "employee_name",
+  "department_of_employee",
+  "document",
+  "select_cznh",
+  "column_break_torm",
+  "requested_date",
+  "expected_return_date",
+  "remark_by_approver",
+  "remark_by_librarian",
+  "section_break_zvui",
+  "draft_time",
+  "requested_time",
+  "under_review_time",
+  "approved_time",
+  "column_break_imjk",
+  "rejected_time",
+  "issued_time",
+  "returned_time",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.department",
+   "fieldname": "department_of_employee",
+   "fieldtype": "Data",
+   "label": "Department of Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document",
+   "options": "Document Registration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "select_cznh",
+   "fieldtype": "Select",
+   "label": "Purpose",
+   "options": "Internal Use\nAudit\nCustoms\nTax Authority\nLegal\nBank\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_torm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requested_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Requested Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_return_date",
+   "fieldtype": "Date",
+   "label": "Expected Return Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remark_by_approver",
+   "fieldtype": "Small Text",
+   "label": "Remark by approver"
+  },
+  {
+   "fieldname": "remark_by_librarian",
+   "fieldtype": "Small Text",
+   "label": "Remark by Librarian"
+  },
+  {
+   "fieldname": "section_break_zvui",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Time Stamp Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "draft_time",
+   "fieldtype": "Data",
+   "label": "Draft Time"
+  },
+  {
+   "fieldname": "requested_time",
+   "fieldtype": "Data",
+   "label": "Requested Time"
+  },
+  {
+   "fieldname": "under_review_time",
+   "fieldtype": "Data",
+   "label": "Under Review Time"
+  },
+  {
+   "fieldname": "approved_time",
+   "fieldtype": "Data",
+   "label": "Approved Time"
+  },
+  {
+   "fieldname": "column_break_imjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rejected_time",
+   "fieldtype": "Data",
+   "label": "Rejected Time"
+  },
+  {
+   "fieldname": "issued_time",
+   "fieldtype": "Data",
+   "label": "Issued Time"
+  },
+  {
+   "fieldname": "returned_time",
+   "fieldtype": "Data",
+   "label": "Returned Time"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Issue Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Issue Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-21 20:30:30.262953",
+ "modified_by": "Administrator",
+ "module": "document_management_system_built_using_frappe_framework",
+ "name": "Document Issue Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Requester",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Librarian",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Approver",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

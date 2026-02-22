@@ -5,6 +5,9 @@ app_description = " Document Management System built using frappe framework"
 app_email = "sirajpanirahi@gmail.com"
 app_license = "mit"
 
+fixtures = [
+    "Web Page"
+]
 # Apps
 # ------------------
 

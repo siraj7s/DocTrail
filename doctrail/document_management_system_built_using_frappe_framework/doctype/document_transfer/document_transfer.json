@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DT-.YYYY.-.####",
+ "creation": "2026-02-21 08:52:46.629360",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "transfer_series",
+  "date_of_transfer",
+  "transfer_from_location",
+  "transfer_to_location",
+  "column_break_dbbk",
+  "reason_for_transfer",
+  "group",
+  "year",
+  "shelf",
+  "section_break_yqew",
+  "documents",
+  "amended_from",
+  "section_break_qjpw",
+  "draft_time",
+  "approved_time",
+  "approved_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "transfer_series",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Transfer Series",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_of_transfer",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Transfer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transfer_from_location",
+   "fieldtype": "Link",
+   "label": "Transfer From Location",
+   "options": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transfer_to_location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transfer To Location",
+   "options": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dbbk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_for_transfer",
+   "fieldtype": "Select",
+   "label": "Reason for Transfer",
+   "options": "\nSpace Optimization\nArchive Consolidation\nStore Renovation"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Group",
+   "options": "\nFinance\nImport\nLegal\nAdmin\nProject"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Year",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "shelf",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Shelf",
+   "options": "Shelf Number"
+  },
+  {
+   "fieldname": "section_break_yqew",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Document Transfer Items"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Transfer",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_qjpw",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Time Stamp Details"
+  },
+  {
+   "fieldname": "draft_time",
+   "fieldtype": "Data",
+   "label": "Draft Time"
+  },
+  {
+   "fieldname": "approved_time",
+   "fieldtype": "Data",
+   "label": "Approved Time"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Data",
+   "label": "Approved By"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-21 08:52:46.629360",
+ "modified_by": "Administrator",
+ "module": "document_management_system_built_using_frappe_framework",
+ "name": "Document Transfer",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Librarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Approver",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

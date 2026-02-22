@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DV-.YYYY.-.####",
+ "creation": "2026-02-21 08:54:57.444543",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "verification_series",
+  "verification_type",
+  "verified_by",
+  "date",
+  "documents",
+  "amended_from",
+  "section_break_mkyo",
+  "draft_time",
+  "verified_time",
+  "cancelled_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "verification_series",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Verification Series",
+   "read_only": 1
+  },
+  {
+   "fieldname": "verification_type",
+   "fieldtype": "Select",
+   "label": "Verification Type",
+   "options": "\nRandom Check\nFull Shelf Audit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Link",
+   "label": "Verified By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Document Condition Verification Items"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Verification",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_mkyo",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Time Stamp Details "
+  },
+  {
+   "fieldname": "draft_time",
+   "fieldtype": "Data",
+   "label": "Draft Time"
+  },
+  {
+   "fieldname": "verified_time",
+   "fieldtype": "Data",
+   "label": "Verified Time"
+  },
+  {
+   "fieldname": "cancelled_time",
+   "fieldtype": "Data",
+   "label": "Cancelled Time"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-21 08:54:57.444543",
+ "modified_by": "Administrator",
+ "module": "document_management_system_built_using_frappe_framework",
+ "name": "Document Verification",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Librarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Archive Approver",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
