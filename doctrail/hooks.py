@@ -28,7 +28,7 @@ fixtures = [
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/doctrail/css/doctrail.css"
+app_include_css = "/assets/doctrail/css/custom.css"
 # app_include_js = "/assets/doctrail/js/doctrail.js"
 
 # include js, css files in header of web template

@@ -1,0 +1,49 @@
+/* Navbar Background */
+header.navbar {
+    background-color: #01234d !important;
+}
+
+/* Only top navbar links & controls */
+header.navbar .navbar-brand,
+/* header.navbar .nav-link, */
+/* header.navbar .btn, */
+header.navbar .indicator {
+    color: #ffffff !important;
+}
+
+/* Icons */
+header.navbar svg,
+header.navbar i {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* Search placeholder */
+header.navbar .search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Fix muted text inside navbar only */
+header.navbar .text-muted,
+header.navbar .text-secondary {
+    color: #ffffff !important;
+}
+
+/* Primary buttons (like Actions button) */
+.btn-primary {
+    background-color: #01234d !important;
+    border-color: #01234d !important;
+}
+
+/* Hover state */
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #001a38 !important;
+    border-color: #001a38 !important;
+}
+
+/* Optional: white text */
+.btn-primary {
+    color: #ffffff !important;
+}
